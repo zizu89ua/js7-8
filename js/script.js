@@ -6,30 +6,21 @@ $(function (){
 	$li.css({
 		'list-style': 'none',
 	});
-
-	var $links = $('a');
-	$links.css({
-		'font-size': '20px',
-		'text-decoration': 'none',
-		'color': '#fff',
-		'padding': '10px',
-		'background': '#007fff',
-		'border': '1px solid #003eff',
-		'border-radius': '5px 5px 0 0',
-		'float': 'left',
-		'margin-left': '5px',
-		'margin-top': '15px'
-	});
 	var $par = $('p');
 	$par.css({
 		'margit-top': '25px',
 		'overflow': 'auto',
 		'height': '165px'
 	});
-	$('.wrap__link').click(function() {
+
+	$('a').click(function() {
             $('.text-block p').removeClass('active');
             $('#'+ $(this).data('id')).addClass('active');
-        })
+          	$('a').removeClass('select');
+          	$(this).addClass('select');
+          	
+	})
+     	
 	// $('#wrap__leftab').on('click', function(){
 	// 	$('#left-col').show();
 	// 	$('#center-col').hide();
@@ -50,13 +41,14 @@ $(function (){
 		$(this).next('.title').animate({
 			opacity: 'show',
 			left: '50'
-		}, 1000);
+		}, 80);
 
 	}, function(){
 		$(this).next('.title').animate({
 			opacity: 'hide',
 			left: '60'
-		}, 'fast')
+		}, 10)
+		
 	})
 	$('.title').css({
 		'background': '#4c79b3',
@@ -67,7 +59,7 @@ $(function (){
 		'padding': '10px 5px',
 	})
 	$('.show-title').on('click', function(){
-		$('.title').show()
+		$('.title').show();
 	})
 	$('.show-title').css({
 		'background': '#fff',
