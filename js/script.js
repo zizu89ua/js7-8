@@ -13,7 +13,7 @@ $(function (){
 		'height': '165px'
 	});
 
-	$('a').click(function() {
+	$('li a').click(function() {
             $('.text-block p').removeClass('active');
             $('#'+ $(this).data('id')).addClass('active');
           	$('a').removeClass('select');
@@ -37,30 +37,28 @@ $(function (){
 	// 	$('#center-col').hide();
 		
 	// })
+
+
 	$('input').hover(function(){
-		$(this).next('.title').animate({
+		var $titleBlock = $(this).attr('title');
+		$(this).parent('.text-box').append('<div class="titleBox" id="titleBox">' + $titleBlock + '</div>').animate({
 			opacity: 'show',
 			left: '50'
 		}, 80);
 
 	}, function(){
-		$(this).next('.title').animate({
+		$('.titleBox').animate({
 			opacity: 'hide',
-			left: '60'
+			left: '60',
 		}, 10)
+
+		$('.titleBox').remove();
 		
-	})
-	$('.title').css({
-		'background': '#4c79b3',
-		'border': '2px solid #cdc',
-		'border-radius': '5px',
-		'color': '#fff',
-		'font-size': '15px',
-		'padding': '10px 5px',
-	})
+	});
+	
 	$('.show-title').on('click', function(){
-		$('.title').show();
-	})
+		$('input').parent('.text-box').append('<div class="titleBox" id="titleBox">' + $('input').attr('title') + '</div>');
+	});
 	$('.show-title').css({
 		'background': '#fff',
 		'border': '1px solid #ccc',
@@ -71,4 +69,5 @@ $(function (){
 		'outline': 'none',
 		'width': '100px'
 	})
+
 });

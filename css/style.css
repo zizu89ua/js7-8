@@ -21,6 +21,8 @@ form,
 fieldset{
 	width: 100%;
 }
+
+
 .select{
 	background: #007fff;
 	color: #fff;
@@ -53,6 +55,17 @@ a{
 }
 .title{
 	display: none;
+}
+#titleBox{
+		background: #4c79b3;
+		border: 2px solid #cdc;
+		border-radius: 5px;
+		color: #fff;
+		float: right;
+		font-size: 15px;
+		margin-right: 20px;
+		padding: 10px 5px;
+		width: 200px;
 }
 .address{
 	margin-right: 11px;
