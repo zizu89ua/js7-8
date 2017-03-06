@@ -46,19 +46,16 @@ $(function (){
 			opacity: 'show',
 			left: '50'
 		}, 80);
-		
 	}, function(){
 		$('.titleBox').animate({
 			opacity: 'hide',
 			left: '60',
 		}, 10)
 
-		$('.titleBox').remove();
 		
 	});
-	
 	$('.show-title').on('click', function(event){
-		event.isDefaultPrevented()
+		$('.titleBox').remove();
    		$('input').each(function() {
     	$(this).parent('.text-box').append('<div class="titleBox" id="titleBox">' + $(this).attr('title') + '</div>');
 
@@ -70,6 +67,7 @@ $(function (){
 		'border': '1px solid #ccc',
 		'border-radius': '5px',
 		'color': '#454545',
+		'display': 'block',
 		'height': '40px',
 		'margin-top': '20px',
 		'outline': 'none',
