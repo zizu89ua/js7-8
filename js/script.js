@@ -40,6 +40,7 @@ $(function (){
 
 
 	$('input').hover(function(){
+		$('.titleBox').remove();
 		var $titleBlock = $(this).attr('title');
 		$(this).parent('.text-box').append('<div class="titleBox" id="titleBox">' + $titleBlock + '</div>').animate({
 			opacity: 'show',
@@ -57,7 +58,10 @@ $(function (){
 	});
 	
 	$('.show-title').on('click', function(){
-		$('input').parent('.text-box').append('<div class="titleBox" id="titleBox">' + $('input').attr('title') + '</div>');
+   	$('input').each(function() {
+    	$(this).parent('.text-box').append('<div class="titleBox" id="titleBox">' + $(this).attr('title') + '</div>');
+		});
+				
 	});
 	$('.show-title').css({
 		'background': '#fff',
