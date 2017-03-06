@@ -46,7 +46,7 @@ $(function (){
 			opacity: 'show',
 			left: '50'
 		}, 80);
-
+		
 	}, function(){
 		$('.titleBox').animate({
 			opacity: 'hide',
@@ -57,11 +57,13 @@ $(function (){
 		
 	});
 	
-	$('.show-title').on('click', function(){
-   	$('input').each(function() {
+	$('.show-title').on('click', function(event){
+		event.isDefaultPrevented()
+   		$('input').each(function() {
     	$(this).parent('.text-box').append('<div class="titleBox" id="titleBox">' + $(this).attr('title') + '</div>');
+
 		});
-				
+		
 	});
 	$('.show-title').css({
 		'background': '#fff',
